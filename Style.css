@@ -1,0 +1,62 @@
+/* Core Styling & Custom Animation Framework */
+
+/* Dynamic Premium Typography & Global Configurations */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Glassmorphism Classes */
+.glass-card {
+    background: rgba(15, 22, 42, 0.65);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Scroll-Driven Reveal Base State */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Trigger Class Appended via JavaScript Scroll Intersection */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ambient Moving Background Animations */
+@keyframes fluidGlow {
+    0% {
+        transform: translate(0px, 0px) scale(1);
+    }
+    50% {
+        transform: translate(40px, -60px) scale(1.15);
+    }
+    100% {
+        transform: translate(0px, 0px) scale(1);
+    }
+}
+
+.dynamic-glow {
+    animation: fluidGlow 14s infinite ease-in-out;
+}
+
+/* Smooth Fade-in For Static Badges */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Custom Table Overlap Tweaks */
+table th, table td {
+    border-right: 1px solid rgba(255, 255, 255, 0.03);
+}
+table th:last-child, table td:last-child {
+    border-right: none;
+}
